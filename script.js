@@ -52,8 +52,8 @@ function draw(userChoice, computerChoice){
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}. It's a draw!`;
-  userChoice_div.classList.add("grey-glow");
-  setTimeout(() => userChoice_div.classList.remove("grey-glow"), 300)
+  userChoice_div.classList.add("yellow-glow");
+  setTimeout(() => userChoice_div.classList.remove("yellow-glow"), 300)
 }
 
 // create all the possible outcomes for the wins, losses and draws for the user.
@@ -77,7 +77,13 @@ function game(userChoice) {
    break;    
  }
 }
- 
+// reset score to start over
+const reset = () => {
+  userScore = 0;
+  computerScore = 0;
+  document.querySelector("#user-score").innerHTML = userScore;
+  document.querySelector("#computer-score").innerHTML = computerScore;
+}
 
 // create when a choice is selected
 function main() {
